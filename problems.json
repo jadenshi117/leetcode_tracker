@@ -10,5 +10,17 @@
     "pattern": "two_pointer",
     "difficulty": "medium",
     "dateSolved": "2026-09-27"
+  },
+  {
+    "name": "Valid Parentheses",
+    "pattern": "stack",
+    "difficulty": "easy",
+    "dateSolved": "2026-09-27"
+  },
+  {
+    "name": "Valid Parentheses",
+    "pattern": "stack",
+    "difficulty": "easy",
+    "dateSolved": "2026-09-27"
   }
 ]
