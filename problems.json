@@ -1,0 +1,14 @@
+[
+  {
+    "name": "TwoSum",
+    "pattern": "hash_map",
+    "difficulty": "easy",
+    "dateSolved": "2026-09-27"
+  },
+  {
+    "name": "3Sum",
+    "pattern": "two_pointer",
+    "difficulty": "medium",
+    "dateSolved": "2026-09-27"
+  }
+]
