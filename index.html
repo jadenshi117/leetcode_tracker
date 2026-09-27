@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeetCode Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Leetcode Tracker</h1>
+
+    <section>
+        <h2>Add a Problem</h2>
+        <form id= "add-form">
+            <input type="text" id="name" placeholder="Problem name" required>
+            <select id="pattern"></select>
+            <select id="difficulty">
+                <option value="easy"></option>
+                <option value="medium"></option>
+                <option value="hard"></option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Pattern Stats</h2>
+        <ul id="stats-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
