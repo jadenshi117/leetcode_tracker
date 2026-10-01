@@ -5,16 +5,24 @@ from collections import Counter
 
 dataFile =  "problems.json"
 
+#checks if file dataFile (in this case file "problems.json") exists,
+#if it does then it reads it and returns the contents as a python object
 def loadProblems():
     if not os.path.exists(dataFile):
         return []
     with open(dataFile, "r") as f:
         return json.load(f)
 
+#opens a json file to write in the problems, effectively saving them in the file
 def saveProblems(problems):
+    # w is write, r is read, with is used to open the file,
+    # do whatever it needs to do, and then it closes the file, saving you the effort of closing it yourself
     with open(dataFile, "w") as f:
+        #json.dump(python data you want to save, writing location, spacing)
         json.dump(problems, f, indent = 2)
 
+#takes in name, pattern, difficulty and date of the problem and
+#uses saveProblem() to write it into the json file
 def addProblem(name, pattern, difficulty):
     problems = loadProblems()
     newProblem = {
@@ -25,13 +33,16 @@ def addProblem(name, pattern, difficulty):
     }
     problems.append(newProblem)
     saveProblems(problems)
-    print(f"Added: {name}")
+    print("Added:", name)
 
+#uses Counter to find the number of each problem
 def patternCounts():
     problems = loadProblems()
+    #p["pattern"] looks for everything in problems under the key "pattern"
     patterns = [p["pattern"] for p in problems]
     return Counter(patterns)
 
+#
 def leastPracticedPattern(allKnownPatterns):
     counts = patternCounts()
     for pattern in allKnownPatterns:

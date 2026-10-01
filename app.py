@@ -5,15 +5,22 @@ from tracker import addProblem, loadProblems, leastPracticedPattern, knownPatter
 app = Flask(__name__)
 CORS(app)
 
+#function declarations
+#add later
+
+
+#confirmation the code is running (testing purposes)
 @app.route("/")
 def home():
     return "LeetCode Tracker API is running"
 
+#
 @app.route("/problems", methods = ["GET"])
 def getProblems():
     problems = loadProblems()
     return jsonify(problems)
 
+#
 @app.route("/problems", methods = ["POST"])
 def createProblem():
     data = request.get_json()
@@ -24,6 +31,7 @@ def createProblem():
     addProblem(name, pattern, difficulty)
     return jsonify({"message": f"Added {name}"}), 201
 
+#
 @app.route("/stats", methods=["GET"])
 def getStats():
     stats = leastPracticedPattern(knownPatterns)
