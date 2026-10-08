@@ -25,7 +25,9 @@ def saveProblems(problems):
 #uses saveProblem() to write it into the json file
 def addProblem(name, pattern, difficulty):
     problems = loadProblems()
+    newId = max([p["id"] for p in problems], default = 0) + 1
     newProblem = {
+        "id": newId,
         "name": name,
         "pattern": pattern,
         "difficulty": difficulty,
@@ -34,6 +36,15 @@ def addProblem(name, pattern, difficulty):
     problems.append(newProblem)
     saveProblems(problems)
     print("Added:", name)
+
+def deleteProblem(problemId):
+    problems = loadProblems()
+    #puts all of the problems without the specific id in a list and rewrites dataFile
+    remaining = [p for p in problems if p["id"] != problemId]
+    if len(remaining) == len(problems):
+        return False
+    saveProblems(remaining)
+    return True
 
 #uses Counter to find the number of each problem
 def patternCounts():

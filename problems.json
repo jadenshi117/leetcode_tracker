@@ -3,24 +3,49 @@
     "name": "TwoSum",
     "pattern": "hash_map",
     "difficulty": "easy",
-    "dateSolved": "2026-09-27"
+    "dateSolved": "2026-09-27",
+    "id": 1
   },
   {
     "name": "3Sum",
     "pattern": "two_pointer",
     "difficulty": "medium",
-    "dateSolved": "2026-09-27"
+    "dateSolved": "2026-09-27",
+    "id": 2
   },
   {
     "name": "Valid Parentheses",
     "pattern": "stack",
     "difficulty": "easy",
-    "dateSolved": "2026-09-27"
+    "dateSolved": "2026-09-27",
+    "id": 3
   },
   {
     "name": "Valid Parentheses",
     "pattern": "stack",
     "difficulty": "easy",
-    "dateSolved": "2026-09-27"
+    "dateSolved": "2026-09-27",
+    "id": 4
+  },
+  {
+    "name": "test",
+    "pattern": "dynamic_programming",
+    "difficulty": "easy",
+    "dateSolved": "2026-10-02",
+    "id": 5
+  },
+  {
+    "id": 6,
+    "name": "testing",
+    "pattern": "linked_list",
+    "difficulty": "easy",
+    "dateSolved": "2026-10-07"
+  },
+  {
+    "id": 7,
+    "name": "testing",
+    "pattern": "linked_list",
+    "difficulty": "easy",
+    "dateSolved": "2026-10-07"
   }
 ]
