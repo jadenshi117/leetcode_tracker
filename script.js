@@ -19,7 +19,7 @@ async function loadStats(){
     const response = await fetch(`${API_URL}/stats`);
     const stats = await response.json();
 
-    const statsList = document.getElementById("stats-list");
+    const statsList = document.getElementById("stats_list");
     statsList.innerHTML = "";
 
     stats.forEach(item => {
@@ -29,7 +29,7 @@ async function loadStats(){
     });
 }
 
-document.getElementById("add-form").addEventListener("submit", async function(event){
+document.getElementById("add_form").addEventListener("submit", async function(event){
     event.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -48,3 +48,14 @@ document.getElementById("add-form").addEventListener("submit", async function(ev
 
 loadPatterns();
 loadStats();
+
+const button = document.getElementById("reveal_problems");
+const content = document.getElementById("saved_problems");
+
+button.addEventListener("click", async function (){
+    if (content.style.display === "none"){
+        content.style.display = "block";
+    } else{
+        content.style.display = "none";
+    }
+});

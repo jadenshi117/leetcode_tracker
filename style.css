@@ -36,12 +36,16 @@ button:hover {
     background-color: #45a049;
 }
 
-#stats-list {
-    list-style: none;
+#stats_list {
+    list-style-type: none;
     padding: 0;
 }
 
-#stats-list li{
+#stats_list li{
     padding: 8px;
     border-bottom: 1px solid #eee;
+}
+
+#saved_problems{
+    display: none;
 }

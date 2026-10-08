@@ -10,7 +10,7 @@
 
     <section>
         <h2>Add a Problem</h2>
-        <form id= "add-form">
+        <form id= "add_form">
             <input type="text" id="name" placeholder="Problem name" required>
             <select id="pattern"></select>
             <select id="difficulty">
@@ -24,8 +24,13 @@
 
     <section>
         <h2>Pattern Stats</h2>
-        <ul id="stats-list"></ul>
+        <ul id="stats_list"></ul>
     </section>
+
+    <button id="reveal_problems">View Saved Problems</button>
+    <div id="saved_problems">
+        <p>hidden content</p>
+    </div>
 
     <script src="script.js"></script>
 </body>

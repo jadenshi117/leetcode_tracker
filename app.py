@@ -27,7 +27,7 @@ def createProblem():
     name = data.get("name")
     pattern = data.get("pattern")
     difficulty = data.get("difficulty")
-
+    
     addProblem(name, pattern, difficulty)
     return jsonify({"message": f"Added {name}"}), 201
 

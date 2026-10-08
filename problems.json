@@ -47,5 +47,12 @@
     "pattern": "linked_list",
     "difficulty": "easy",
     "dateSolved": "2026-10-07"
+  },
+  {
+    "id": 8,
+    "name": "test 2",
+    "pattern": "sliding_window",
+    "difficulty": "medium",
+    "dateSolved": "2026-10-08"
   }
 ]
