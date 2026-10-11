@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from tracker import addProblem, loadProblems, leastPracticedPattern, knownPatterns
+from tracker import addProblem, deleteProblem, loadProblems, leastPracticedPattern, knownPatterns
 
 app = Flask(__name__)
 CORS(app)
@@ -30,6 +30,13 @@ def createProblem():
     
     addProblem(name, pattern, difficulty)
     return jsonify({"message": f"Added {name}"}), 201
+
+@app.route("/delete", methods = ["POST"])
+def removeProblem():
+    data = request.get_json()
+    Id = data.get("Id")
+    problems = deleteProblem(Id)
+    return jsonify(problems)
 
 #
 @app.route("/stats", methods=["GET"])

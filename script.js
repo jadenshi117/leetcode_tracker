@@ -29,6 +29,38 @@ async function loadStats(){
     });
 }
 
+async function loadProblems(){
+    const response = await fetch(`${API_URL}/problems`);
+    const problems = await response.json();
+
+    const problemsList = document.getElementById("problems_list");
+    problemsList.innerHTML = "";
+
+    problems.forEach((item, i) => {
+        const li = document.createElement("li");
+        const button = document.createElement("button")
+        button.type = "button";
+        button.textContent = "Delete";
+        button.id = `${i + 1}`;
+        button.addEventListener("click", async function(event) {
+            event.preventDefault();
+
+            const Id = item.id;
+            await fetch(`${API_URL}/delete`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({Id})
+            });
+
+            await loadProblems();
+            await loadStats();
+        });
+        li.textContent = `${item.name}: ${item.pattern}`;
+        li.appendChild(button)
+        problemsList.appendChild(li);
+    });
+}
+
 document.getElementById("add_form").addEventListener("submit", async function(event){
     event.preventDefault();
 
@@ -43,18 +75,21 @@ document.getElementById("add_form").addEventListener("submit", async function(ev
     });
 
     document.getElementById("name").value = "";
-    loadStats();
+
+    await loadStats();
+    await loadProblems();
 });
 
 loadPatterns();
 loadStats();
+loadProblems();
 
 const button = document.getElementById("reveal_problems");
 const content = document.getElementById("saved_problems");
 
 button.addEventListener("click", async function (){
     if (content.style.display === "none"){
-        content.style.display = "block";
+        content.style.display = "flex";
     } else{
         content.style.display = "none";
     }
