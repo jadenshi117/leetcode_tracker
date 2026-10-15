@@ -36,6 +36,7 @@ async function loadProblems(){
     const problemsList = document.getElementById("problems_list");
     problemsList.innerHTML = "";
 
+    // list of saved problems along with delete buttons
     problems.forEach((item, i) => {
         const li = document.createElement("li");
         const button = document.createElement("button")
@@ -88,7 +89,7 @@ const button = document.getElementById("reveal_problems");
 const content = document.getElementById("saved_problems");
 
 button.addEventListener("click", async function (){
-    if (content.style.display === "none"){
+    if (getComputedStyle(content).display === "none"){
         content.style.display = "flex";
     } else{
         content.style.display = "none";

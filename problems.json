@@ -1,19 +1,5 @@
 [
   {
-    "id": 5,
-    "name": "testing",
-    "pattern": "sliding_window",
-    "difficulty": "easy",
-    "dateSolved": "2026-10-10"
-  },
-  {
-    "id": 6,
-    "name": "testing",
-    "pattern": "two_pointer",
-    "difficulty": "easy",
-    "dateSolved": "2026-10-10"
-  },
-  {
     "id": 7,
     "name": "testingtesting123",
     "pattern": "two_pointer",
