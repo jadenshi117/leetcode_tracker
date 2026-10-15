@@ -31,12 +31,15 @@ def createProblem():
     addProblem(name, pattern, difficulty)
     return jsonify({"message": f"Added {name}"}), 201
 
-@app.route("/delete", methods = ["POST"])
-def removeProblem():
-    data = request.get_json()
-    Id = data.get("Id")
-    problems = deleteProblem(Id)
-    return jsonify(problems)
+@app.route("/problems/<int:problemId>", methods = ["DELETE"])
+def removeProblem(problemId):
+    if deleteProblem(problemId):
+        return jsonify({"message": f"Deleted problem {problemId}"})
+    return jsonify({"error": "Problem not found"}), 404
+    # data = request.get_json()
+    # Id = data.get("Id")
+    # problems = deleteProblem(Id)
+    # return jsonify(problems)
 
 #
 @app.route("/stats", methods=["GET"])

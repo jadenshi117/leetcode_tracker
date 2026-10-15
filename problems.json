@@ -1,9 +1,9 @@
 [
   {
-    "id": 7,
-    "name": "testingtesting123",
-    "pattern": "two_pointer",
+    "id": 1,
+    "name": "testing",
+    "pattern": "dynamic_programming",
     "difficulty": "easy",
-    "dateSolved": "2026-10-10"
+    "dateSolved": "2026-10-15"
   }
 ]

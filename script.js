@@ -43,15 +43,22 @@ async function loadProblems(){
         button.type = "button";
         button.textContent = "Delete";
         button.id = `${i + 1}`;
-        button.addEventListener("click", async function(event) {
-            event.preventDefault();
-
-            const Id = item.id;
-            await fetch(`${API_URL}/delete`, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({Id})
+        button.addEventListener("click", async function() {
+            const response = await fetch(`${API_URL}/problems/${item.id}` , {
+                method: "DELETE"
             });
+            if(!response.ok) {
+                console.error("Delete failed");
+                return;
+            }
+            // event.preventDefault();
+
+            // const Id = item.id;
+            // await fetch(`${API_URL}/delete`, {
+            // method: "POST",
+            // headers: {"Content-Type": "application/json"},
+            // body: JSON.stringify({Id})
+            // });
 
             await loadProblems();
             await loadStats();
