@@ -48,7 +48,17 @@ def deleteProblem(problemId):
     saveProblems(remaining)
     return True
 
-
+def updateProblem(problemId, pattern = None, difficulty = None):
+    problems = loadProblems()
+    for p in problems:
+        if p["id"] == problemId:
+            if pattern is not None:
+                p["pattern"] = pattern
+            if difficulty is not None:
+                p["difficulty"] = difficulty
+            saveProblems(problems)
+            return True
+    return False
 
 #uses Counter to find the number of each problem
 def patternCounts():
