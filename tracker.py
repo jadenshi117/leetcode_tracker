@@ -48,6 +48,8 @@ def deleteProblem(problemId):
     saveProblems(remaining)
     return True
 
+
+
 #uses Counter to find the number of each problem
 def patternCounts():
     problems = loadProblems()
