@@ -39,6 +39,7 @@ def addProblem(name, pattern, difficulty):
     saveProblems(problems)
     print("Added:", name)
 
+
 def deleteProblem(problemId):
     problems = loadProblems()
     #puts all of the problems without the specific id in a list and rewrites dataFile
@@ -74,6 +75,8 @@ def leastPracticedPattern(allKnownPatterns):
         if pattern not in counts:
             counts[pattern] = 0
     return counts.most_common()[::-1]
+
+#early testing code, ignore
 
 # def main():
 #     while (True):
